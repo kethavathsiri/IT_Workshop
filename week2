@@ -1,0 +1,172 @@
+//grepfile-to create file
+user@siri:~$ cat>grepfile.txt
+wellcome to ubuntu
+unix and linux
+rgukt is one of the best university
+//to print word
+user@siri:~$ grep 'unix' grepfile.txt
+unix and linux
+
+//-h: Display the matched lines, but do not display the filenames.
+user@siri:~$ grep -h 'and' grepfile.txt
+unix and linux
+
+//-n: Display the matched lines and their line numbers.
+user@siri:~$ grep -n 'one' grepfile.txt
+3:rgukt is one of the best university
+
+//-o :Print only the matched parts of a matching line, with each such part on a separate output line.
+user@siri:~$ grep -o "unix" grepfile.txt
+unix
+
+//-v: This prints out all the lines that do not matches the pattern
+user@siri:~$ grep -v "unix" grepfile.txt
+wellcome to ubuntu
+rgukt is one of the best university
+
+//-e: used to display multiple characters
+user@siri:~$ grep -e 'to' -e 'is' grepfile.txt
+wellcome to ubuntu
+rgukt is one of the best university
+
+//-c: This prints only a count of the lines that match a pattern
+user@siri:~$ grep -c "unix" grepfile.txt
+1
+
+//-l: dispalys the file name contating the given word
+user@siri:~$ grep -l "one" grepfile.txt
+grepfile.txt
+
+//creating file
+user@siri:~$ cat>monthfile.txt
+february
+march
+may
+june
+july
+august
+
+//sort:to get the content in sorted order 
+user@siri:~$ sort monthfile.txt
+august
+february
+july
+june
+march
+may
+
+//sort command
+//sort -M : to get the months in order wise
+user@siri:~$ sort -M monthfile.txt
+february
+march
+may
+june
+july
+august
+
+user@siri:~$ cat>number.txt
+2
+2
+01
+3 
+45
+65
+87
+
+//-n: Sorts a file numerically (interprets data as numbers).
+
+user@siri:~$ sort -n number.txt
+01
+2
+2
+3 
+45
+65
+87
+
+//-u : to remove duplicate numbers
+user@siri:~$ sort -u number.txt
+01
+2
+3 
+45
+65
+87
+
+//-r : to print the numbers in reverse order
+user@siri:~$ sort -r number.txt
+87
+65
+45
+3 
+2
+2
+01
+
+//sed command
+user@siri:~$ cat>sedfile1.text
+rgukt
+unix
+linux is a commands
+ubuntu
+SHIRISHA
+
+//removes last line
+user@siri:~$ sed '/SHIRISHA/d' sedfile.txt
+rgukt
+unix
+linux is a commands
+ubuntu
+
+//Sed ‘2d’  : removing second line of the paragraph
+user@siri:~$ sed '2d' sedfile.txt
+rgukt
+linux is a commands
+ubuntu
+SHIRISHA
+
+//awk command
+user@siri:~$ cat>awtfile.awt
+shirisha storage id 1234
+sonaly linux id 3432
+avani linux id 3238
+rohith linux id 2323
+
+//it deletes the given line and print the other lines
+user@siri:~$ sed '1,2d' sedfile.txt
+linux is a commands
+ubuntu
+SHIRISHA
+
+//Splitting a Line Into Fields
+user@siri:~$ awk '{print $1}' awkfile.txt
+vinay
+venky
+raj
+manasa
+
+user@siri:~$ awk '{print $2,$4}' awkfile.txt
+storage 7422
+window 8762
+linux 6543
+unix 7654
+
+user@siri:~$ awk '{print $3}' awkfile.txt
+od
+od
+od
+od
+
+user@siri:~$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            7716        1458        4430         466        1827        5524
+Swap:           2047           0        2047
+
+//shutdown
+shutdown -r +s
+shutdown -r now
+shutdown -H (HALF)
+shutdown -p (POWEROFF)
+shutdown -su
+
