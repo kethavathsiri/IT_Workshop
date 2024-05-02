@@ -1,0 +1,408 @@
+//week1
+//Unix user commands
+
+//whoami – show your username
+user@siri:~$ whoami
+user
+//id-print user identity
+user@siri:~$ id
+uid=1000(user) gid=1000(user) groups=1000(user),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),132(lxd),133(sambashare)
+//groups-show which groups user belongs to
+user@siri:~$ groups
+user adm cdrom sudo dip plugdev lpadmin lxd sambashare
+
+passwd – change user password
+
+//who-find out who is logged into the system
+user@siri:~$ who
+user     tty2         2024-05-01 16:22 (tty2)
+user@siri:~$ last
+user     tty2         tty2             Wed May  1 16:22   still logged in
+reboot   system boot  5.15.0-91-generi Wed May  1 16:22   still running
+user     tty2         tty2             Wed May  1 07:28 - down   (00:44)
+reboot   system boot  5.15.0-91-generi Wed May  1 07:27 - 08:12  (00:45)
+user     tty2         tty2             Tue Apr 30 14:12 - down   (02:39)
+reboot   system boot  5.15.0-91-generi Tue Apr 30 14:12 - 16:51  (02:39)
+user     tty2         tty2             Tue Apr 30 09:26 - down   (00:48)
+reboot   system boot  5.15.0-91-generi Tue Apr 30 09:26 - 10:15  (00:49)
+user     tty2         tty2             Tue Mar 19 09:56 - down   (00:07)
+reboot   system boot  5.15.0-91-generi Tue Mar 19 09:56 - 10:04  (00:08)
+user     tty2         tty2             Tue Mar 19 09:44 - down   (00:07)
+reboot   system boot  5.15.0-91-generi Tue Mar 19 09:44 - 09:51  (00:07)
+user     tty2         tty2             Tue Mar 19 09:42 - down   (00:00)
+reboot   system boot  5.15.0-91-generi Tue Mar 19 09:42 - 09:43  (00:00)
+user     tty2         tty2             Sun Mar 17 11:01 - down   (01:32)
+reboot   system boot  5.15.0-91-generi Sun Mar 17 11:01 - 12:33  (01:32)
+user     tty2         tty2             Sun Mar 17 10:46 - down   (00:11)
+reboot   system boot  5.15.0-91-generi Sun Mar 17 10:46 - 10:58  (00:11)
+user     tty2         tty2             Sun Mar 17 09:14 - down   (01:05)
+reboot   system boot  5.15.0-91-generi Sun Mar 17 09:14 - 10:19  (01:05)
+user     tty2         tty2             Sat Mar 16 21:13 - down   (01:38)
+reboot   system boot  5.15.0-91-generi Sat Mar 16 21:13 - 22:51  (01:38)
+user     tty2         tty2             Sat Mar 16 20:07 - down   (00:56)
+reboot   system boot  5.15.0-91-generi Sat Mar 16 20:07 - 21:03  (00:56)
+user     tty2         tty2             Sat Mar 16 15:15 - down   (00:10)
+reboot   system boot  5.15.0-91-generi Sat Mar 16 15:13 - 15:25  (00:12)
+user     tty2         tty2             Sat Mar 16 06:50 - down   (01:55)
+reboot   system boot  5.15.0-91-generi Sat Mar 16 06:50 - 08:46  (01:56)
+user     tty2         tty2             Sat Mar 16 06:36 - down   (00:04)
+reboot   system boot  5.15.0-91-generi Sat Mar 16 06:36 - 06:41  (00:05)
+user     tty2         tty2             Fri Mar 15 23:06 - down   (00:47)
+reboot   system boot  5.15.0-91-generi Fri Mar 15 23:05 - 23:53  (00:47)
+
+wtmp begins Wed Feb 21 16:44:44 2024
+
+//-server address
+user@siri:~$ nslookup google.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 142.250.182.78
+Name:	google.com
+Address: 2404:6800:4002:81a::200e
+//– copy files (work in progress)
+user@siri:~$ cp file1 file2
+user@siri:~$ cat file1
+hi 
+this is a IT WORKSHOP LAB
+//– remove files and directories (work in progress)
+user@siri:~$ rm file1
+user@siri:~$ cat file1
+cat: file1: No such file or directory
+user@siri:~$ cat file1
+hi we are the student of rgukt
+//– rename or move files and directories to another location
+user@siri:~$ mv file1 file2
+user@siri:~$ cat file2
+hi we are the student of rgukt
+
+user@siri:~$ echo "hello"
+hello 
+//– change directory
+user@siri:~$ cd
+//– confirm current directory
+user@siri:~$ pwd
+/home/user
+//– make new directory
+user@siri:~$ mkdir workshop
+//– remove directories in Unix
+user@siri:~$ rmdir workshop
+//ps - displays a snapshot of all current processes
+user@siri:~$ ps
+    PID TTY          TIME CMD
+   4656 pts/0    00:00:00 bash
+   6086 pts/0    00:00:00 ps
+//Show every process running, formatted as a table
+user@siri:~$ ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 16:22 ?        00:00:00 /sbin/init splash
+root           2       0  0 16:22 ?        00:00:00 [kthreadd]
+root           3       2  0 16:22 ?        00:00:00 [rcu_gp]
+root           4       2  0 16:22 ?        00:00:00 [rcu_par_gp]
+root           5       2  0 16:22 ?        00:00:00 [slub_flushwq]
+root           6       2  0 16:22 ?        00:00:00 [netns]
+root           7       2  0 16:22 ?        00:00:00 [kworker/0:0-events]
+user        1634    1478  0 16:22 ?        00:00:00 /usr/libexec/goa-identity-ser
+user        1641    1478  0 16:22 ?        00:00:00 /usr/libexec/gvfs-mtp-volume-
+user        1667    1478  0 16:22 ?        00:00:00 /usr/libexec/gnome-session-ct
+user        1679    1478  0 16:22 ?        00:00:00 /usr/libexec/gnome-session-bi
+user        1701    1679  0 16:22 ?        00:00:00 /usr/libexec/at-spi-bus-launc
+root        5868       2  0 17:15 ?        00:00:00 [kworker/2:4]
+user        6093    1478  0 17:18 ?        00:00:00 /usr/libexec/tracker-extract-
+user        6098    4656  0 17:18 pts/0    00:00:00 ps -ef
+//top - displays a live status of current processes
+user@siri:~$ top
+
+top - 18:19:22 up  1:56,  1 user,  load average: 0.80, 0.75, 0.65
+Tasks: 238 total,   1 running, 237 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  0.4 sy,  0.0 ni, 97.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7716.8 total,   2705.7 free,   2014.6 used,   2996.6 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   4846.8 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND 
+   6755 user      20   0  850640 151388  44996 S   3.3   1.9   3:01.79 gedit   
+   1704 user      20   0 5925628 289048 143900 S   1.7   3.7   5:32.12 gnome-+ 
+    823 mysql     20   0 2373456 395200  35524 S   1.0   5.0   0:47.59 mysqld  
+    207 root     -51   0       0      0      0 S   0.3   0.0   1:14.94 irq/16+ 
+    645 root      20   0  276220  11088  10100 S   0.3   0.1   0:01.07 therma+ 
+   4877 root       0 -20       0      0      0 I   0.3   0.0   0:02.72 kworke+ 
+   7474 user      20   0  553716  53132  40256 S   0.3   0.7   0:03.77 gnome-+ 
+   7814 root      20   0       0      0      0 I   0.3   0.0   0:00.08 kworke+ 
+      1 root      20   0  166844  12140   8284 S   0.0   0.2   0:01.00 systemd 
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthrea+ 
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp  
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_pa+ 
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_f+ 
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns   
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworke+ 
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_per+ 
+     11 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_ta+
+     
+//bg - resume a background suspended a job
+user@siri:~$ bg
+[1]+ top &
+
+[1]+  Stopped                 top
+//clear – clear a terminal screen
+user@siri:~$ clear
+//history – print history of commands in the current section
+user@siri:~$ history
+    1  history
+    2  bg
+    3  ps
+    4  ps -ef
+    5  clear
+    6  clear
+    7  clear
+    8  hsitory
+    9  history
+    
+-------------QUESTIONS---------------------
+//#1) touch: Create a new file or update its timestamp.
+user@siri:~$ touch file1 file2
+//#2) cat: Concatenate files and print to stdout.
+user@siri:~$ cat>file1
+hello
+//#3) cp: Copy files
+user@siri:~$ cp file1 file2
+//#4) mv: Move files or rename files
+user@siri:~$ mv file1 file2
+//#5) rm: Remove files and directories
+user@siri:~$ rm file1
+//#6) mkdir: Make a directory
+user@siri:~$ mkdir dir1
+//#7) rmdir: Remove a directory
+user@siri:~$ rmdir dir1
+//#8) cd: Change directory
+user@siri:~$ cd dir1
+user@siri:~/dir1$ 
+//#9) pwd: Print the present working directory
+user@siri:~/dir1$ pwd dir1
+/home/user/dir1
+//#10) ls: List directory contents
+user@siri:~$ ls -alt
+total 2168
+drwxr-xr-x 45 user user  12288 May  1 17:30  .
+-rw-rw-r--  1 user user  54544 May  1 17:30  week1
+drwxrwxr-x  2 user user   4096 May  1 17:28  dir1
+-rw-rw-r--  1 user user      6 May  1 17:22  file2
+drwxrwxr-x  5 user user   4096 May  1 17:15  .audacity-data
+-rw-rw-r--  1 user user    557 Nov 20 16:49  arrays.java
+-rw-rw-r--  1 user user    525 Nov 20 16:32  sum.java
+-rw-rw-r--  1 user user    501 Nov 20 14:35  class.java
+-rw-rw-r--  1 user user    501 Nov 20 14:35  classsum.java
+
+
+
+//ls-
+user@siri:~$ ls -ltr
+total 10
+drwxr-xr-x  2 user user   4096 Mar 16  2022  Public
+drwxr-xr-x  2 user user   4096 Feb 24  2023  Templates
+-rw-rw-r--  1 user user    843 Nov  9 21:37  greatest.java
+
+drwxrwxr-x  9 user user   4096 Jan 27 18:11  packages
+-rw-rw-r--  1 user user  31304 Jan 28 12:21  sailors_external
+-rw-rw-r--  1 user user    858 Jan 28 18:17  WeellyEmployee.class
+-rw-rw-r--  1 user user    814 Jan 28 18:17  Employe.class
+-rw-rw-r--  1 user user    119 Jan 28 18:38  payable.class
+-rw-rw-r--  1 user user    845 Jan 28 18:38  drawable.class
+-rw-rw-r--  1 user user    114 Jan 28 19:29  Fare.class
+-rw-rw-r--  1 user user    353 Jan 28 19:29  Train.class
+
+-rw-rw-r--  1 user user   1405 Feb 18 10:40  MenuExample.class
+-rw-rw-r--  1 user user   2037 Feb 18 10:41  Menu.class
+-rw-rw-r--  1 user user    780 Feb 18 10:42  menu.java
+-rw-rw-r--  1 user user    488 Feb 18 10:59 'University$2.class'
+-rw-rw-r--  1 user user    559 Feb 18 10:59 'University$1.class'
+-rw-rw-r--  1 user user   2668 Feb 18 10:59  University.class
+-rw-rw-r--  1 user user   2153 Feb 22 11:23  account.java
+-rw-rw-r--  1 user user   1487 Feb 22 11:44  Rectangle.class
+-rw-rw-r--  1 user user    521 Feb 22 13:17  S.class
+-rw-rw-r--  1 user user   1659 Feb 22 14:29  employee.class
+-
+
+-rw-rw-r--  1 user user   3988 Apr 11 22:57  practice.c
+
+
+user@siri:~$ ls -a
+ .						 local.class
+ ..						 localvar.java
+ 11.java					 logics
+ 2.java						 .m2
+ account1.java					 madam
+ Account.class					 Main1.java
+ account.java					 Main.class
+ a.class					 Main.java
+ A.class					'MemberOuter$Inner.class'
+ actorstoday.txt				 MemberOuter.class
+
+ dbms1						 reference.java
+ dbms2						 RegularEmployee.class
+ dbmslab					 R.html
+ dbmslab_internal.sql				 sailor2
+ dbms.sql					 sailors3
+'Defaultdate$1.class'				 sailors_external
+'Defaultdate$2.class'				 S.class
+'Defaultdate$3.class'				 sedfile.txt
+'Defaultdate$4.class'				 shape.class
+ Defaultdate.class				 shape.java
+ Desktop					 Shapes.class
+ Dice.class					 shirisha
+ dir1						 siri.sql
+ 					 WeeklyEmployee.class
+ last_lab_dbms					 WeellyEmployee.class
+ LICENSE					 windowclose.html
+ link.html					 witharg.java
+ .local						 withoutarg.java
+'local$1Inner.class'
+
+//#11) which: Locate a command
+user@siri:~$ which -a cat
+/usr/bin/cat
+/bin/cat
+//#12) man: Interface for working with the online reference manuals.
+user@siri:~$ man cat
+
+[1]+  Stopped                 man cat
+//#13) su: Change user-id or become super-user.
+user@siri:~$ su user
+Password: 
+
+//#14) sudo: Execute a command as some other user or super-user
+user@siri:~$ sudo ls/usr/local/protected
+[sudo] password for user: 
+sudo: ls/usr/local/protected: command not found
+
+//#15) find: Used to search for files and directories as mentioned in the ‘expression’
+user@siri:~$ find/usr-type c -name backup
+bash: find/usr-type: No such file or directory
+
+//#16) du: Estimate disk usage is blocks
+user@siri:~$ du
+
+//#17) df: Show the number of free blocks for the mounted file system
+user@siri:~$ df -l
+Filesystem     1K-blocks     Used Available Use% Mounted on
+tmpfs             790204     2360    787844   1% /run
+/dev/nvme0n1p2 244506940 85233204 146780680  37% /
+tmpfs            3951020     6584   3944436   1% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+/dev/nvme0n1p1    523248     6224    517024   2% /boot/efi
+tmpfs             790204      128    790076   1% /run/user/1000
+//#18) cal: Displays the calendar.
+user@siri:~$ cal 4 2018
+     April 2018       
+Su Mo Tu We Th Fr Sa  
+ 1  2  3  4  5  6  7  
+ 8  9 10 11 12 13 14  
+15 16 17 18 19 20 21  
+22 23 24 25 26 27 28  
+29 30 
+//#19) date: Displays the system date and time.      
+user@siri:~$ date +%d/%m/%y
+01/05/24
+//#20) who: Displays the list of users currently logged in
+user@siri:~$ who
+user     tty2         2024-05-01 16:22 (tty2)
+//#21) whoami: Displays the user id of the currently logged-in user.
+user@siri:~$ whoami
+user
+
+//Questions
+//1)How to Create a File?
+user@siri:~$ touch file1
+//2)How to view the list of Commands executed?
+user@siri:~$ history
+16  gcc knapsack.c
+   17  ./a.out
+   18  gcc knapsack.c
+   19  ./a.out
+   20  cd DAA
+   21  gcc knapsack.c
+   22  ./a.out
+   23  gcc knapsackRepition.c
+   24  ../a.out
+   25  gcc knapsackRepition.c
+   26  ./a.out
+   27  gcc strreverse.c
+   28  ./a.out
+   29  clear
+   30  gcc strreverse.c
+   31  ./a.out
+   32  ./a.out
+   33  gcc singleskip.c
+   34  gcc singleSkip.c
+   35  ./a.out
+   36  multipleString.c
+   37  gcc multipleString.c
+   38  gcc multipleString.c
+   39  ./a.out
+   40  cd DAA
+   41  gcc knapsackRepition.c
+   42  ./a.out
+   43  gcc knapsackRepition.c
+   44  ./a.out
+   45  cd DAA
+   46  gcc knapsackRepition.c
+   47  ./a.out
+
+//3)How to view your username in Unix?  
+user@siri:~$ whoami
+user
+//4)List some of the common and most widely used UNIX commands.
+user@siri:~$ whoami
+user
+
+user@siri:~$ id
+uid=1000(user) gid=1000(user) groups=1000(user),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),132(lxd),133(sambashare)
+
+user@siri:~$ groups
+user adm cdrom sudo dip plugdev lpadmin lxd sambashare
+
+user@siri:~$ who
+user     tty2         2024-05-01 16:22 (tty2)
+user@siri:~$ last
+user     tty2         tty2             Wed May  1 16:22   still logged in
+reboot   system boot  5.15.0-91-generi Wed May  1 16:22   still running
+user     tty2         tty2             Wed May  1 07:28 - down   (00:44)
+reboot   system boot  5.15.0-91-generi Wed May  1 07:27 - 08:12  (00:45)
+user     tty2         tty2             Tue Apr 30 14:12 - down   (02:39)
+
+
+#1) touch: Create a new file or update its timestamp.
+user@siri:~$ touch file1 file2
+#2) cat: Concatenate files and print to stdout.
+user@siri:~$ cat>file1
+hello
+#3) cp: Copy files
+user@siri:~$ cp file1 file2
+#4) mv: Move files or rename files
+user@siri:~$ mv file1 file2
+#5) rm: Remove files and directories
+user@siri:~$ rm file1
+#6) mkdir: Make a directory
+user@siri:~$ mkdir dir1
+#7) rmdir: Remove a directory
+user@siri:~$ rmdir dir1
+#8) cd: Change directory
+user@siri:~$ cd dir1
+user@siri:~/dir1$ 
+#9) pwd: Print the present working directory
+user@siri:~/dir1$ pwd dir1
+/home/user/dir1
+//5)How to Remove files using unix commands?
+user@siri:~$ rm file1
+user@siri:~$ cat file1
+cat: file1: No such file or directory
+//6)Create a RGUKT new file
+user@siri:~$ touch RGUKT
+
+//7)How can you use grep along with regular expressions in a shell script to extract lines from a log file that match a specific pattern, such as timestamps?
+
+
+
+
+ 
